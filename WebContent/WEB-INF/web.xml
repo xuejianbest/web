@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+		 
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>test</servlet-name>
+  	<servlet-class>servlet.Controller</servlet-class>
+  	
+  	<init-param>
+  		<param-name>test_initParam</param-name>
+  		<param-value>initParam--163.com</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>test</servlet-name>
+  	<url-pattern>/a</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+      <servlet-name>fileform</servlet-name>
+      <servlet-class>servlet.FileForm</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>fileform</servlet-name>
+  	<url-pattern>/fileform</url-pattern>
+  </servlet-mapping>
+  
+  <context-param>
+  	<param-name>test-contextParam</param-name>
+  	<param-value>contextParam--hotmail.com</param-value>
+  </context-param>
+  
+  <listener>
+  	<listener-class>listener.TestListener</listener-class>
+  </listener>
+  
+  <filter>
+  	<filter-name>testFilter</filter-name>
+  	<filter-class>filter.TestFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>testFilter</filter-name>
+  	<servlet-name>test</servlet-name>	
+  </filter-mapping>
+</web-app>
